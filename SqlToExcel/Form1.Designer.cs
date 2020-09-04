@@ -157,7 +157,7 @@
             // 
             this.rdbtnXLSX.AutoSize = true;
             this.rdbtnXLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rdbtnXLSX.Location = new System.Drawing.Point(101, 406);
+            this.rdbtnXLSX.Location = new System.Drawing.Point(101, 383);
             this.rdbtnXLSX.Name = "rdbtnXLSX";
             this.rdbtnXLSX.Size = new System.Drawing.Size(90, 29);
             this.rdbtnXLSX.TabIndex = 11;
@@ -169,7 +169,7 @@
             // 
             this.rdbtnXLT.AutoSize = true;
             this.rdbtnXLT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rdbtnXLT.Location = new System.Drawing.Point(249, 406);
+            this.rdbtnXLT.Location = new System.Drawing.Point(260, 383);
             this.rdbtnXLT.Name = "rdbtnXLT";
             this.rdbtnXLT.Size = new System.Drawing.Size(74, 29);
             this.rdbtnXLT.TabIndex = 12;
@@ -181,7 +181,7 @@
             // 
             this.rdbtnXLS.AutoSize = true;
             this.rdbtnXLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rdbtnXLS.Location = new System.Drawing.Point(404, 406);
+            this.rdbtnXLS.Location = new System.Drawing.Point(415, 383);
             this.rdbtnXLS.Name = "rdbtnXLS";
             this.rdbtnXLS.Size = new System.Drawing.Size(75, 29);
             this.rdbtnXLS.TabIndex = 13;
@@ -193,7 +193,7 @@
             // 
             this.rdbtnCSV.AutoSize = true;
             this.rdbtnCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rdbtnCSV.Location = new System.Drawing.Point(546, 406);
+            this.rdbtnCSV.Location = new System.Drawing.Point(557, 383);
             this.rdbtnCSV.Name = "rdbtnCSV";
             this.rdbtnCSV.Size = new System.Drawing.Size(79, 29);
             this.rdbtnCSV.TabIndex = 14;
@@ -204,18 +204,19 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnExport.Location = new System.Drawing.Point(497, 456);
+            this.btnExport.Location = new System.Drawing.Point(497, 429);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(139, 69);
             this.btnExport.TabIndex = 15;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 537);
+            this.ClientSize = new System.Drawing.Size(652, 515);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.rdbtnCSV);
             this.Controls.Add(this.rdbtnXLS);

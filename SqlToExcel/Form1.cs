@@ -14,10 +14,9 @@ namespace SqlToExcel
     public partial class Form1 : Form
     {
 
-        SqlConnection con = new SqlConnection();
-        SqlCommand komut = new SqlCommand();
-        SqlDataReader reader;
-
+        SqlConnection cnn = new SqlConnection();
+        SqlCommand cmd;
+        
         public Form1()
         {
             InitializeComponent();
@@ -25,75 +24,99 @@ namespace SqlToExcel
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnect sql = new SqlConnect();
-            sql.ServerName = txtServerName.Text;
-            sql.UserName = txtLogin.Text;
-            sql.Password = txtPass.Text;
-            
 
             try
             {
-                if (sql.ServerName != " "  && sql.UserName != " "  && sql.Password != " ")
+                SqlConnect sql = new SqlConnect();
+                sql.ServerName = txtServerName.Text;
+                sql.UserName = txtLogin.Text;
+                sql.Password = txtPass.Text;
+
+
+                if (!string.IsNullOrEmpty(sql.ServerName) && !string.IsNullOrEmpty(sql.UserName) && !string.IsNullOrEmpty(sql.Password))
                 {
+                    cnn.ConnectionString = string.Format("Data Source={0}; User ID={1}; Password={2}", sql.ServerName, sql.UserName, sql.Password);
 
-                    string baglanti = string.Format("Data Source={0};  User ID={1}; Password={2}", sql.ServerName, sql.UserName, sql.Password);
+                    cnn.Open();
 
-                    con.ConnectionString = baglanti;
-                    con.Open();
-                    DataTable table = con.GetSchema("databases");
+                    DataTable table = cnn.GetSchema("databases");
                     foreach (DataRow item in table.Rows)
                     {
                         cmbDatabase.Items.Add(item.Field<string>("database_name"));
                     }
-
                 }
                 else
                 {
-                    MessageBox.Show("Baglantı Degerleri Bos Geçilemez!!");
+                    MessageBox.Show("Baglantı Değerleri Bos Geçilemez!!");
                 }
-
             }
             catch (Exception exp)
             {
-
-                MessageBox.Show(exp.Message);
+                 MessageBox.Show(exp.Message);
             }
+            //finally
+            //{
+            //    if (cnn.State== ConnectionState.Open)
+            //    {
+            //        cnn.Close();
+            //    }
+            //}
         }
-
+        string selectDb ="";
         private void cmbDatabase_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(cmbDatabase.SelectedItem.ToString());
-            var result = cmbDatabase.SelectedIndex;
+           
+           var result = cmbDatabase.SelectedItem;
+            selectDb = result.ToString();
+           
 
-            switch (result)
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter da;
+            DataTable dt;
+           
+
+            if (rdbtnXLSX.Checked)
             {
-                case 22:
-                    int sayac = 0;
-                    komut.Connection = con;
-                    komut.CommandText = "Select Kullanı from dbo.Kullanici";
-                    reader = komut.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        sayac++;
-                        Console.WriteLine(reader[0] + ":" + reader[1] + " " + reader[2]);
+                try
+                {
+                    cmd = new SqlCommand("USE " + selectDb + " \n" + txtSorgu.Text, cnn);
 
-                    }
+                    da = new SqlDataAdapter(cmd);
+                    dt = new DataTable();
 
+                    da.Fill(dt);
 
-                    //SqlDataAdapter cmd = new SqlDataAdapter("Select * from Kullanici", con);
-                    //DataTable tablo = new DataTable();
-                    //cmd.Fill(tablo);
-                    //foreach (DataRow item in tablo.Rows)
-                    //{
-                    //    Console.WriteLine(item.ItemArray);
-                    //}
-                    break;
+                    //dt.WriteXml(@"C:\Users\user\Desktop\Name.xls");
                     
+                }
+                catch (Exception)
+                {
 
+                    throw;
+                }
 
-                default:
-                    break;
+            }
+            else if (rdbtnXLT.Checked)
+            {
+                MessageBox.Show("Excel Formatı XLT");
+            }
+            else if (rdbtnXLS.Checked)
+            {
+                MessageBox.Show("Excel Formatı XLS");
+            }
+            else if (rdbtnCSV.Checked)
+            {
+                MessageBox.Show("Excel Formatı CSV");
+            }
+            else
+            {
+                MessageBox.Show("Excel Formatı boş geçilemez!!");
             }
         }
+
+        
     }
 }
