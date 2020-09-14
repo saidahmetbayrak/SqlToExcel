@@ -39,10 +39,10 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblDatabase = new System.Windows.Forms.Label();
             this.cmbDatabase = new System.Windows.Forms.ComboBox();
-            this.rdbtnXLSX = new System.Windows.Forms.RadioButton();
-            this.rdbtnXLT = new System.Windows.Forms.RadioButton();
-            this.rdbtnXLS = new System.Windows.Forms.RadioButton();
-            this.rdbtnCSV = new System.Windows.Forms.RadioButton();
+            this.rndbtnXLSX = new System.Windows.Forms.RadioButton();
+            this.rndbtnXLT = new System.Windows.Forms.RadioButton();
+            this.rndbtnXLS = new System.Windows.Forms.RadioButton();
+            this.rndbtnCSV = new System.Windows.Forms.RadioButton();
             this.btnExport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -100,6 +100,7 @@
             this.txtPass.Location = new System.Drawing.Point(162, 96);
             this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(317, 31);
             this.txtPass.TabIndex = 5;
             // 
@@ -153,53 +154,53 @@
             this.cmbDatabase.TabIndex = 10;
             this.cmbDatabase.SelectedIndexChanged += new System.EventHandler(this.cmbDatabase_SelectedIndexChanged);
             // 
-            // rdbtnXLSX
+            // rndbtnXLSX
             // 
-            this.rdbtnXLSX.AutoSize = true;
-            this.rdbtnXLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rdbtnXLSX.Location = new System.Drawing.Point(101, 383);
-            this.rdbtnXLSX.Name = "rdbtnXLSX";
-            this.rdbtnXLSX.Size = new System.Drawing.Size(90, 29);
-            this.rdbtnXLSX.TabIndex = 11;
-            this.rdbtnXLSX.TabStop = true;
-            this.rdbtnXLSX.Text = "XLSX";
-            this.rdbtnXLSX.UseVisualStyleBackColor = true;
+            this.rndbtnXLSX.AutoSize = true;
+            this.rndbtnXLSX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rndbtnXLSX.Location = new System.Drawing.Point(101, 383);
+            this.rndbtnXLSX.Name = "rndbtnXLSX";
+            this.rndbtnXLSX.Size = new System.Drawing.Size(90, 29);
+            this.rndbtnXLSX.TabIndex = 11;
+            this.rndbtnXLSX.TabStop = true;
+            this.rndbtnXLSX.Text = "XLSX";
+            this.rndbtnXLSX.UseVisualStyleBackColor = true;
             // 
-            // rdbtnXLT
+            // rndbtnXLT
             // 
-            this.rdbtnXLT.AutoSize = true;
-            this.rdbtnXLT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rdbtnXLT.Location = new System.Drawing.Point(260, 383);
-            this.rdbtnXLT.Name = "rdbtnXLT";
-            this.rdbtnXLT.Size = new System.Drawing.Size(74, 29);
-            this.rdbtnXLT.TabIndex = 12;
-            this.rdbtnXLT.TabStop = true;
-            this.rdbtnXLT.Text = "XLT";
-            this.rdbtnXLT.UseVisualStyleBackColor = true;
+            this.rndbtnXLT.AutoSize = true;
+            this.rndbtnXLT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rndbtnXLT.Location = new System.Drawing.Point(260, 383);
+            this.rndbtnXLT.Name = "rndbtnXLT";
+            this.rndbtnXLT.Size = new System.Drawing.Size(74, 29);
+            this.rndbtnXLT.TabIndex = 12;
+            this.rndbtnXLT.TabStop = true;
+            this.rndbtnXLT.Text = "XLT";
+            this.rndbtnXLT.UseVisualStyleBackColor = true;
             // 
-            // rdbtnXLS
+            // rndbtnXLS
             // 
-            this.rdbtnXLS.AutoSize = true;
-            this.rdbtnXLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rdbtnXLS.Location = new System.Drawing.Point(415, 383);
-            this.rdbtnXLS.Name = "rdbtnXLS";
-            this.rdbtnXLS.Size = new System.Drawing.Size(75, 29);
-            this.rdbtnXLS.TabIndex = 13;
-            this.rdbtnXLS.TabStop = true;
-            this.rdbtnXLS.Text = "XLS";
-            this.rdbtnXLS.UseVisualStyleBackColor = true;
+            this.rndbtnXLS.AutoSize = true;
+            this.rndbtnXLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rndbtnXLS.Location = new System.Drawing.Point(415, 383);
+            this.rndbtnXLS.Name = "rndbtnXLS";
+            this.rndbtnXLS.Size = new System.Drawing.Size(75, 29);
+            this.rndbtnXLS.TabIndex = 13;
+            this.rndbtnXLS.TabStop = true;
+            this.rndbtnXLS.Text = "XLS";
+            this.rndbtnXLS.UseVisualStyleBackColor = true;
             // 
-            // rdbtnCSV
+            // rndbtnCSV
             // 
-            this.rdbtnCSV.AutoSize = true;
-            this.rdbtnCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rdbtnCSV.Location = new System.Drawing.Point(557, 383);
-            this.rdbtnCSV.Name = "rdbtnCSV";
-            this.rdbtnCSV.Size = new System.Drawing.Size(79, 29);
-            this.rdbtnCSV.TabIndex = 14;
-            this.rdbtnCSV.TabStop = true;
-            this.rdbtnCSV.Text = "CSV";
-            this.rdbtnCSV.UseVisualStyleBackColor = true;
+            this.rndbtnCSV.AutoSize = true;
+            this.rndbtnCSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rndbtnCSV.Location = new System.Drawing.Point(557, 383);
+            this.rndbtnCSV.Name = "rndbtnCSV";
+            this.rndbtnCSV.Size = new System.Drawing.Size(79, 29);
+            this.rndbtnCSV.TabIndex = 14;
+            this.rndbtnCSV.TabStop = true;
+            this.rndbtnCSV.Text = "CSV";
+            this.rndbtnCSV.UseVisualStyleBackColor = true;
             // 
             // btnExport
             // 
@@ -218,10 +219,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(652, 515);
             this.Controls.Add(this.btnExport);
-            this.Controls.Add(this.rdbtnCSV);
-            this.Controls.Add(this.rdbtnXLS);
-            this.Controls.Add(this.rdbtnXLT);
-            this.Controls.Add(this.rdbtnXLSX);
+            this.Controls.Add(this.rndbtnCSV);
+            this.Controls.Add(this.rndbtnXLS);
+            this.Controls.Add(this.rndbtnXLT);
+            this.Controls.Add(this.rndbtnXLSX);
             this.Controls.Add(this.cmbDatabase);
             this.Controls.Add(this.lblDatabase);
             this.Controls.Add(this.btnLogin);
@@ -253,10 +254,10 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblDatabase;
         private System.Windows.Forms.ComboBox cmbDatabase;
-        private System.Windows.Forms.RadioButton rdbtnXLSX;
-        private System.Windows.Forms.RadioButton rdbtnXLT;
-        private System.Windows.Forms.RadioButton rdbtnXLS;
-        private System.Windows.Forms.RadioButton rdbtnCSV;
+        private System.Windows.Forms.RadioButton rndbtnXLSX;
+        private System.Windows.Forms.RadioButton rndbtnXLT;
+        private System.Windows.Forms.RadioButton rndbtnXLS;
+        private System.Windows.Forms.RadioButton rndbtnCSV;
         private System.Windows.Forms.Button btnExport;
     }
 }
